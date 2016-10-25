@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
-const Home = () =>{
-	return(
-		<div>
-			<h1>Hi stranger</h1>
-		</div>
-	);
+class Home extends React.Component {
+	constructor(props, context) {
+    super(props, context);
+	}
+	render() {
+		return(
+			<div>
+				<h1>{this.props.welcomeText.word}</h1>
+			</div>
+		);
+	}
+}
+
+Home.propTypes = {
+  welcomeText: PropTypes.object.isRequired
 };
 
 export default Home; 
